@@ -14,12 +14,17 @@ import AboutUs from "./Page/AboutUs";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ContactUs from "./Page/ContactUs";
+import Features from "./Components/Features";
+import LastSection from "./Components/LastSetion";
+import Reviwes from "./Components/Reviews";
+import ScrollToTop from "./Context/ScrollToTop";
 
 function App() {
   
   return (
     <CartProvider>
       <BrowserRouter>
+       <ScrollToTop/>
         <ToastContainer
           position="bottom-right"
           autoClose={3000}
@@ -34,7 +39,11 @@ function App() {
             element={
               <>
                 <HeroSection />
+                <Features/>
                 <CategoryPage />
+                <Reviwes/>
+               
+                
               </>
             }
           />
@@ -47,6 +56,7 @@ function App() {
           <Route path="/aboutUs" element={<AboutUs/>} />
           <Route path="/contactUs" element={<ContactUs/>} />
         </Routes>
+         <LastSection/>
         <Footer />
       </BrowserRouter>
     </CartProvider>
