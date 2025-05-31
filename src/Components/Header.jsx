@@ -12,7 +12,7 @@ export default function Header() {
   const [searchInput, setSearchInput] = useState("");
   const navigate = useNavigate();
 
-  // Scroll hide/show header
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > lastScrollY) {
@@ -27,17 +27,16 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  // Lock scroll when menu open
+
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : 'auto';
   }, [menuOpen]);
 
-  // Search handler
   const handleSearch = (e) => {
     e.preventDefault();
     if (searchInput.trim() !== "") {
       navigate(`/shop?category=${encodeURIComponent(searchInput.trim())}`);
-      setSearchInput(""); // optional: clear after search
+      setSearchInput(""); 
     }
   };
 

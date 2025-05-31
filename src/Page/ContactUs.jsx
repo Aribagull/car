@@ -42,7 +42,7 @@ export default function ContactUs() {
             </div>
             <div>
               <h4 className="font-semibold text-lg">Phone</h4>
-              <p className="text-gray-700">9231-1234–678</p>
+              <p className="text-gray-700">5164219925</p>
             </div>
           </div>
 
@@ -63,7 +63,7 @@ export default function ContactUs() {
             <div>
               <h4 className="font-semibold text-lg">Address</h4>
               <p className="text-gray-700">
-                Lahore, Pakistan
+                1464 omega street elmont newyork 11003
               </p>
             </div>
           </div>
