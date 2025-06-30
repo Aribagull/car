@@ -4,9 +4,13 @@
   "private": true,
   "dependencies": {
     "@heroicons/react": "^2.2.0",
+    "datatables.net": "^2.3.2",
+    "datatables.net-dt": "^2.3.2",
     "framer-motion": "^12.15.0",
+    "jquery": "^3.7.1",
     "lucide-react": "^0.503.0",
     "react": "^18.2.0",
+    "react-data-table-component": "^7.7.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.5.0",
     "react-intersection-observer": "^9.16.0",
