@@ -7,20 +7,31 @@
 @tailwind utilities;
 
 
-@keyframes fadeSlideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+
+.input-underline {
+  position: relative;
+  border-bottom: 1px solid #4b5563;
 }
 
-.animate-fadeSlideUp {
-  animation: fadeSlideUp 2s ease forwards;
+.input-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  height: 1px;
+  width: 0;
+  background-color: white;
+  transition: width 0.4s ease;
 }
+
+.input-underline:hover::after,
+.input-underline:focus::after {
+  width: 100%;
+}
+
+
+
+
 
 
 
