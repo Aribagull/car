@@ -103,9 +103,7 @@ export default function CarListing() {
         alt={car.title}
         className="w-full h-56 object-cover"
       />
-      <span className="absolute top-4 left-4 bg-black/70 px-3 py-1 rounded-md text-white text-lg font-medium">
-        {car.status}
-      </span>
+
     </div>
 
     <div className="p-4">
