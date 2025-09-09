@@ -1,100 +1,103 @@
-import { useState, useEffect } from "react"
-import { Swiper, SwiperSlide } from "swiper/react"
-import { Autoplay } from "swiper/modules"
-import { MdOutlineChevronLeft } from "react-icons/md"
-import { HiChevronRight } from "react-icons/hi"
-import { motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
-import { Link } from "react-router-dom"
-import services from "../Data/ServiceData.js"
-
-import "swiper/css"
-import "swiper/css/autoplay"
+import { Link } from "react-router-dom";
+import financingImg from "../Assets/Images/Heroslider-2.jpg";
+import insuranceImg from "../Assets/Images/Heroslider-2.jpg";
+import { MdArrowOutward } from "react-icons/md";
 
 export default function Services() {
-  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 })
-  const [insideSlider, setInsideSlider] = useState(false)
-
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 })
-
-  useEffect(() => {
-    const move = (e) => setCursorPos({ x: e.clientX, y: e.clientY })
-    window.addEventListener("mousemove", move)
-    return () => window.removeEventListener("mousemove", move)
-  }, [])
-
   return (
-    <motion.section
-      ref={ref}
-      initial={{ opacity: 0, y: 100 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className="w-full bg-black text-white py-16 px-6 md:px-32 relative"
-    >
-      {insideSlider && (
-        <div
-          className="fixed z-50 w-16 h-16 rounded-full bg-black text-white flex items-center justify-center pointer-events-none transition-transform duration-150"
-          style={{ left: cursorPos.x - 32, top: cursorPos.y - 32 }}
-        >
-          <span className="flex items-center gap-2 text-lg">
-            <MdOutlineChevronLeft />
-            <HiChevronRight />
-          </span>
-        </div>
-      )}
-
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ delay: 0.3, duration: 0.8 }}
-        className="flex justify-between items-start mb-10 flex-col md:flex-row gap-6 md:gap-0"
-      >
-        <div>
-          <h2 className="text-4xl font-bold">Our services</h2>
-          <p className="mt-2 text-gray-400">
-            We provide more than just car sales – from financing and trade-ins to after-sales support, everything is designed for your convenience. Our goal is to make your car ownership journey smooth, enjoyable, and worry-free.
-          </p>
-        </div>
-      </motion.div>
-
-      <div
-        onMouseEnter={() => setInsideSlider(true)}
-        onMouseLeave={() => setInsideSlider(false)}
-        className="relative cursor-none"
-      >
-        <Swiper
-          modules={[Autoplay]}
-          autoplay={{ delay: 3000, disableOnInteraction: false }}
-          speed={1000}
-          spaceBetween={24}
-          loop={true}
-          breakpoints={{
-            320: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-          className="pb-12"
-        >
-          {services.map((item) => (
-            <SwiperSlide key={item.id}>
-              <Link to={`/services/${item.id}`}>
-                <motion.div className="relative rounded-xl overflow-hidden group h-[450px]">
-                  <img
-                    src={item.img}
-                    alt={item.title}
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 group-hover:opacity-60 transition-opacity duration-500"></div>
-                  <div className="absolute bottom-6 left-6">
-                    <h3 className="text-xl font-bold">{item.title}</h3>
-                    <p className="text-gray-300">{item.desc}</p>
-                  </div>
-                </motion.div>
-              </Link>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+    <section className="bg-black text-white py-16 px-6 md:px-20">
+      <div className="text-center mb-12">
+        <span className="bg-[#171817] px-3 py-2 rounded-full text-sm">
+          Services
+        </span>
+        <h2 className="text-3xl md:text-4xl font-bold mt-4">
+          FULL-SERVICE MOBILITY PARTNER
+        </h2>
+        <p className="mt-4 text-gray-300 max-w-2xl mx-auto">
+          You can come to us for the purchase of your car and for all your
+          maintenance and repairs. In addition, we offer a number of extra
+          services.
+        </p>
       </div>
-    </motion.section>
-  )
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+     
+        <div className="relative rounded-lg overflow-hidden group">
+          <img
+            src={financingImg}
+            alt="Financing / Leasing"
+            className="w-full h-[550px] object-cover transform duration-500 group-hover:scale-105"
+          />
+
+       
+          <div className="absolute inset-0 bg-black/70 translate-y-full group-hover:translate-y-0 transition duration-500" />
+
+       
+          <div className="absolute bottom-6 left-6 z-10">
+            <h3 className="text-xl font-bold">FINANCING / LEASING</h3>
+            <Link
+              to="/financing"
+              className="block text-sm text-white mt-1 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition duration-500"
+            >
+              LEES MEER <MdArrowOutward/>
+            </Link>
+          </div>
+        </div>
+
+      
+        <div className="relative rounded-lg overflow-hidden group">
+          <img
+            src={insuranceImg}
+            alt="Insurance"
+            className="w-full h-[550px] object-cover transform duration-500 group-hover:scale-105"
+          />
+
+        
+          <div className="absolute inset-0 bg-black/70 translate-y-full group-hover:translate-y-0 transition duration-500" />
+
+       
+          <div className="absolute bottom-6 left-6 z-10">
+            <h3 className="text-xl font-bold">INSURANCE</h3>
+            <Link
+              to="/insurance"
+              className="block text-sm text-white mt-1 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition duration-500"
+            >
+              LEES MEER <MdArrowOutward/>
+            </Link>
+          </div>
+        </div>
+
+      
+        <div className="flex flex-col gap-6">
+       
+          <div className="bg-[#3d7235] p-6 py-10 rounded-lg flex flex-col justify-between">
+            <h3 className="text-2xl font-bold">SERVICES</h3>
+            <p className="my-4 text-lg text-gray-200">
+              Explore our comprehensive services for a seamless car experience.
+            </p>
+            <Link
+              to="/services"
+              className="mt-4 bg-white text-black px-4 py-3 rounded text-sm font-semibold w-fit"
+            >
+              VIEW ALL SERVICES
+            </Link>
+          </div>
+
+      
+          <div className="bg-[#242824] p-6 py-10 rounded-lg flex flex-col justify-between">
+            <h3 className="text-2xl font-bold">ASK?</h3>
+            <p className="my-4 text-lg text-gray-200">
+              Feel free to contact us for more information.
+            </p>
+            <Link
+              to="/contact"
+              className="mt-4 bg-white text-black px-4 py-3 rounded text-sm font-semibold w-fit"
+            >
+              DIRECT CONTACT
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }

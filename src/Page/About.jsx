@@ -59,8 +59,8 @@ export default function About() {
   }, [startCount]);
 
   return (
-    <div className="pt-20 px-6 md:px-20 text-white">
-      <div className="py-20 text-center">
+    <div className="pt-20 text-white">
+      <div className="py-20 text-center px-20">
         <h1 className="text-3xl font-bold text-white">About us</h1>
         <p className="text-sm text-gray-300 mt-2">
           <Link to="/" className="hover:text-[#009225]">
@@ -105,22 +105,22 @@ export default function About() {
 
       <div
         ref={counterRef}
-        className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 text-center md:text-left"
+        className="px-36 py-10 grid md:grid-cols-2 gap-10 text-center md:text-left bg-white"
       >
         <div>
           <h3 className="text-4xl font-bold text-[#009225]">
             {customers.toLocaleString()}+
           </h3>
-          <p className="text-xl font-semibold mt-2">Happy Customers</p>
-          <p className="text-gray-400 mt-2">
+          <p className="text-xl text-black font-semibold mt-2">Happy Customers</p>
+          <p className="text-gray-700 mt-2">
             Natus error sit voluptatem accusantium doloremque laudantium, totam
             rem aperiam.
           </p>
         </div>
         <div>
-          <h3 className="text-4xl font-bold text-[#009225]">{reviews}</h3>
-          <p className="text-xl font-semibold mt-2">Perfect Reviews</p>
-          <p className="text-gray-400 mt-2">
+          <h3 className="text-4xl  font-bold text-[#009225]">{reviews}</h3>
+          <p className="text-xl text-black font-semibold mt-2">Perfect Reviews</p>
+          <p className="text-gray-700 mt-2">
             Natus error sit voluptatem accusantium doloremque laudantium, totam
             rem aperiam.
           </p>

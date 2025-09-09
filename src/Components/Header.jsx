@@ -2,12 +2,13 @@ import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { Link as ScrollLink } from "react-scroll"
 import logo from "../Assets/Logo/logo-2-retina.webp"
-import { Search, X } from "lucide-react"
+import { X } from "lucide-react"
+
+import leftBg from "../Assets/Images/Heroslider-3.png"
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
-  const [showSearch, setShowSearch] = useState(false)
-  const [searchTerm, setSearchTerm] = useState("")
+  const [menuOpen, setMenuOpen] = useState(false)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -18,89 +19,95 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const handleSearchToggle = () => {
-    setShowSearch((prev) => !prev)
-    setSearchTerm("")
-  }
-
-  const handleSearchSubmit = (e) => {
-    if (e.key === "Enter" && searchTerm.trim() !== "") {
-      navigate(`/allcars?search=${encodeURIComponent(searchTerm)}`)
-      setShowSearch(false)
-      setSearchTerm("")
-    }
-  }
-
   return (
-    <header
-      className={`w-full fixed top-0 left-0 z-30 transition-colors duration-500 ${
-        scrolled ? "bg-black" : "bg-transparent"
-      } text-white px-10 py-4`}
+    <>
+     <header
+  className={`w-full fixed top-0 left-0 z-30 transition-colors duration-500 font-montserrat uppercase 
+  ${scrolled 
+    ? "bg-black" 
+    : "bg-gradient-to-b from-black/50 to-transparent"} 
+  text-white px-20 py-6`}
+>
+  <div className="flex justify-between items-center">
+    <Link to="/">
+      <img src={logo} alt="Logo" className="w-32 cursor-pointer" />
+    </Link>
+
+    <div className="flex items-center gap-12">
+      <nav className="hidden md:flex gap-12 text-sm ">
+        <Link to="/allcars" className="hover:text-gray-300">Offer</Link>
+        <Link
+          to="/contactus"
+          className="cursor-pointer hover:text-gray-300"
+        >
+          Contact
+        </Link>
+      </nav>
+
+      <button
+        onClick={() => setMenuOpen(true)}
+        className="flex items-center gap-2 px-4 py-2 text-base font-light uppercase bg-transparent text-white border border-white rounded transition group"
+      >
+        Menu
+        <div className="relative w-5 h-2">
+          <span className="absolute top-0 left-0 w-full h-[1px] bg-white transition-all duration-300 group-hover:top-1/2 group-hover:-translate-y-1/2"></span>
+          <span className="absolute bottom-0 left-0 w-full h-[1px] bg-white transition-all duration-300 group-hover:bottom-1/2 group-hover:translate-y-1/2"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div
+  className={`fixed top-0 left-0 h-full w-full z-50 transform transition-transform duration-500 text-white ${
+    menuOpen ? "translate-x-0" : "-translate-x-full"
+  }`}
+>
+  <div className="grid grid-cols-1 md:grid-cols-2 h-full uppercase">
+    <div
+      className="relative flex flex-col justify-center items-center text-4xl font-semibold text-white"
+      style={{
+        backgroundImage: `url(${leftBg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
-      <div className="grid grid-cols-3 items-center">
-        <nav className="flex gap-6 text-sm font-medium">
-  <Link
-    to="/"
-    className="hover:text-gray-300 relative after:block after:h-[2px] after:bg-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left"
-  >
-    Home
-  </Link>
 
-  <Link
-    to="/allcars"
-    className="hover:text-gray-300 relative after:block after:h-[2px] after:bg-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left"
-  >
-    Offer
-  </Link>
-
-  <Link
-    to="/about"
-    className="hover:text-gray-300 relative after:block after:h-[2px] after:bg-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left"
-  >
-    About us
-  </Link>
-
-  <ScrollLink
-    to="contact-section"
-    smooth={true}
-    duration={600}
-    offset={-80}
-    className="cursor-pointer hover:text-gray-300 relative after:block after:h-[2px] after:bg-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left"
-  >
-    Contact
-  </ScrollLink>
-</nav>
-
-        <div className="flex justify-center">
-          <Link to="/">
-            <img src={logo} alt="Logo" className="w-32 cursor-pointer" />
-          </Link>
-        </div>
-
-        <div className="flex items-center justify-end gap-5 relative">
-          {showSearch ? (
-            <div className="relative transition-all duration-300">
-              <input
-                type="text"
-                placeholder="Search cars..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                onKeyDown={handleSearchSubmit}
-                className="pl-2 pr-8 py-1 text-sm rounded-lg text-black w-40 md:w-56 focus:outline-none transition-all duration-300"
-              />
-              <X
-                className="absolute right-2 top-1/2 -translate-y-1/2 w-5 h-5 cursor-pointer text-gray-500 hover:text-gray-700"
-                onClick={handleSearchToggle}
-              />
-            </div>
-          ) : (
-            <Search
-              className="w-5 h-5 cursor-pointer hover:text-gray-300"
-              onClick={handleSearchToggle}
-            />
-          )}
-        </div>
+      <div className="absolute inset-0 bg-black/70"></div>
+      <div className="relative z-10 flex flex-col  gap-6 ">
+        <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+        <Link to="/allcars" onClick={() => setMenuOpen(false)}>Offer</Link>
+        <Link to="/services" onClick={() => setMenuOpen(false)}>Services</Link>
+        <Link to="/about" onClick={() => setMenuOpen(false)}>About us</Link>
+        <Link to="/contactus" onClick={() => setMenuOpen(false)}>Contact</Link>
       </div>
-    </header>
+    </div>
+<div className="flex justify-center items-center h-full bg-black relative">
+  <div className="absolute top-4 right-4">
+    <button onClick={() => setMenuOpen(false)} className="text-white">
+      <X size={28} />
+    </button>
+  </div>
+
+
+  <div className="flex flex-col justify-center items-start gap-4 px-10 py-20 text-left w-[60%]">
+    <h2 className="text-xl font-bold">ROKS CAR COMPANY</h2>
+    <p className="text-gray-200">Dorpsstraat 72, 5051 CL Goirle</p>
+    <p className="text-gray-200">+3113 534 1659 (General)</p>
+    <p className="text-gray-200">+316 14 28 16 95 (Sales - Patrick)</p>
+    <p className="text-gray-200">+316 53 44 58 22 (Sales - Ad)</p>
+    <p className="text-gray-200">info@autobedrijf-roks.nl</p>
+
+    <div className="flex gap-3 mt-4">
+      <button className="border border-white px-3 py-1 rounded">WhatsApp</button>
+      <button className="border border-white px-3 py-1 rounded">Facebook</button>
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
+
+    </>
   )
 }

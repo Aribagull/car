@@ -2,19 +2,19 @@ import React from 'react'
 import HeroSlider from '../Components/HeroSlider'
 import ServicesSection from '../Components/ServicesSection'
 import CarListing from '../Components/CarListing'
-import ContactForm from '../Components/Contact'
 import AboutSection from '../Components/AboutSection'
-import Testimonials from '../Components/Testimonials'
+import MovingBanner from '../Components/MovingBanner'
+import ImageGallery from '../Components/ImageGallery'
 
 export default function Home() {
   return (
     <div>
       <HeroSlider/>
-      <ServicesSection/>
       <CarListing/>
-      <Testimonials/>
+      <MovingBanner/>
+      <ServicesSection/>
+      <ImageGallery/>
       <AboutSection/>
-      <ContactForm/>
 
     </div>
   )

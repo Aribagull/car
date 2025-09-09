@@ -1,75 +1,83 @@
-import { FaFacebookF, FaInstagram, FaDribbble } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-import logo from "../Assets/Logo/logo-2-retina.webp"
+import { FaClock, FaPhoneAlt, FaMapMarkerAlt, FaFacebookF } from "react-icons/fa";
+import logo from "../Assets/Logo/logo-2-retina.webp";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-gray-300">
-      <div className="max-w-7xl mx-auto flex justify-between px-10 py-16">
-        <div>
-        <img src={logo} className="w-32" />
-          <p className="text-sm leading-relaxed mt-7 w-80">
-            Ignissimos ducimus qui blanditiis prae sentium voluptatum deleniti.
-          </p>
-        </div>
-
-        <div>
-          <h3 className="text-lg font-semibold text-white mb-4">Office</h3>
-          <p className="text-sm">Germany —</p>
-          <p className="text-sm">785 15h Street, Office 478,</p>
-          <p className="text-sm mb-3">Berlin, De 81566</p>
-
-          <a href="mailto:info@email.com" className="block text-sm underline mb-2">
-            info@email.com
-          </a>
-          <p className="text-sm font-semibold text-white">+1 840 841 25 69</p>
-        </div>
-
+    <footer className="bg-[linear-gradient(to_bottom,#f7faf6_0%,#f7faf6_30%,black_30%,black_100%)]">
+      <div className="bg-[#1a1d1a] w-[90%] mx-auto text-white py-12 px-10 md:px-20 rounded-3xl mt-6">
       
-        <div>
-          <h3 className="text-lg font-semibold text-white mb-4">Links</h3>
-          <ul className="space-y-2">
-            <li><a href="#" className="hover:text-white">Services</a></li>
-            <li><a href="#" className="hover:text-white">About Us</a></li>
-            <li><a href="#" className="hover:text-white">Contacts</a></li>
-          </ul>
-        </div>
+        <div className="flex justify-between gap-12">
+       
+          <div className="md:w-2/3 space-y-6">
+            <h2 className="text-2xl font-bold">DON'T HESITATE AND COME BY</h2>
 
-   
-        <div>
-          <h3 className="text-lg font-semibold text-white mb-4">Get in Touch</h3>
-          <div className="flex space-x-4">
-            <a
-              href="#"
-              className="p-3 border border-gray-500 rounded-md hover:bg-gray-800"
-            >
-              <FaFacebookF />
-            </a>
-            <a
-              href="#"
-              className="p-3 border border-gray-500 rounded-md hover:bg-gray-800"
-            >
-              <FaXTwitter />
-            </a>
-            <a
-              href="#"
-              className="p-3 border border-gray-500 rounded-md hover:bg-gray-800"
-            >
-              <FaDribbble />
-            </a>
-            <a
-              href="#"
-              className="p-3 border border-gray-500 rounded-md hover:bg-gray-800"
-            >
-              <FaInstagram />
-            </a>
+            <div className="flex items-start gap-3">
+              <FaClock className="text-lg mt-1" />
+              <p>
+                Mon to Fri: 08:15 - 18:00 <br />
+                Sat: 09:00 - 17:00 & Sun: Closed
+              </p>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <FaPhoneAlt className="text-lg mt-1" />
+              <p>
+                +3113 534 1659 <span className="text-gray-400">(General)</span> <br />
+                +316 14 28 16 95 <span className="text-gray-400">(Sale - Patrick)</span> <br />
+                +316 53 44 58 22 <span className="text-gray-400">(Sales - Ad)</span>
+              </p>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <FaMapMarkerAlt className="text-lg mt-1" />
+              <p>Dorpsstraat 72, 5051 CL Goirle</p>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <button className="bg-white text-black px-5 py-2 rounded-md font-medium">
+                MAIL US
+              </button>
+              <button className="bg-transparent border border-white px-5 py-2 rounded-md font-medium">
+                SALE
+              </button>
+              <button className="bg-transparent border border-white p-2 rounded-md">
+                <FaFacebookF />
+              </button>
+            </div>
+          </div>
+
+       
+          <div className="md:w-1/3 flex text-right flex-col text-lg">
+            <a href="#" className="hover:text-gray-400">Home</a>
+            <a href="#" className="hover:text-gray-400">Offer</a>
+            <a href="#" className="hover:text-gray-400">Services</a>
+            <a href="#" className="hover:text-gray-400">Workshop</a>
+            <a href="#" className="hover:text-gray-400">About us</a>
+            <a href="#" className="hover:text-gray-400">Contact</a>
           </div>
         </div>
       </div>
 
-      <div className="border-t border-white/20 mx-24"></div>
-      <div className="mx-24 text-base text-gray-200 py-4">
-        ThemeREX © 2025. All rights reserved.
+  
+      <div className="mt-10 pt-6 w-[90%] pb-8 mx-auto text-white">
+
+        <div className="flex justify-between items-center">
+          <img 
+            src={logo}
+            alt="Header Logo" 
+            className="h-10 object-contain"
+          />
+          <a href="#" className="text-gray-400 hover:underline">Privacy Policy</a>
+        </div>
+
+  
+        <p className="text-xs text-gray-400 mt-4 leading-relaxed">
+          Please note!: Our advertisements are compiled with great care.
+          Nevertheless, it is possible that there are more or fewer options than reported.
+          <br />
+         Our advice: Check carefully whether all options are available during a viewing or test drive. 
+          You cannot derive any rights from our advertisements or specification cards on the car.
+        </p>
       </div>
     </footer>
   );
