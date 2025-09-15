@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { FaQuoteLeft } from "react-icons/fa";
-import { motion } from "framer-motion"; // 👈 import
+import { motion } from "framer-motion"; 
 
 const testimonials = [
   {
@@ -41,8 +41,8 @@ export default function Testimonials() {
   return (
     <motion.section
       className="bg-black text-white py-16 px-6 md:px-20 overflow-hidden"
-      initial={{ opacity: 0, y: 100 }}      // 👈 start from bottom
-      whileInView={{ opacity: 1, y: 0 }}   // 👈 animate upwards
+      initial={{ opacity: 0, y: 100 }}      
+      whileInView={{ opacity: 1, y: 0 }}   
       transition={{ duration: 0.8, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.2 }}
     >

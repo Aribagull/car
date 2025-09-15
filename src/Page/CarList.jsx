@@ -12,14 +12,14 @@ export default function CarList() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // ✅ URL query se search value nikalna
+
   const queryParams = new URLSearchParams(location.search);
   const search = queryParams.get("search")?.toLowerCase() || "";
 
   const filteredCars = useMemo(() => {
     let filtered = [...cars];
 
-    // search filter
+ 
     if (search) {
       filtered = filtered.filter(
         (car) =>
@@ -75,24 +75,24 @@ export default function CarList() {
   return (
     <div className="bg-black min-h-screen px-6 py-10 pt-32">
       <h2 className="text-center text-white font-semibold text-4xl py-10 uppercase">
-        All Cars
+       Alle Auto’s
       </h2>
 
       {search && (
         <p className="text-center text-gray-400 mb-6">
-          Search results for: <span className="font-semibold">{search}</span>
+          Zoekresultaten voor: <span className="font-semibold">{search}</span>
         </p>
       )}
 
-      {/* Filters */}
+    
       <div className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-6xl mx-auto mb-10">
-        {/* Brand Filter */}
+   
         <select
           className="bg-black border border-gray-600 text-white rounded-lg px-4 py-2"
           value={selectedBrand}
           onChange={(e) => setSelectedBrand(e.target.value)}
         >
-          <option value="">BRAND</option>
+          <option value="">MERK</option>
           <option value="Audi">Audi</option>
           <option value="BMW">BMW</option>
           <option value="Volkswagen">Volkswagen</option>
@@ -101,7 +101,6 @@ export default function CarList() {
           <option value="Hyundai">Hyundai</option>
         </select>
 
-        {/* Model Filter */}
         <select
           className="bg-black border border-gray-600 text-white rounded-lg px-4 py-2"
           value={selectedModel}
@@ -116,7 +115,6 @@ export default function CarList() {
           <option value="Tucson">Tucson</option>
         </select>
 
-        {/* Transmission */}
         <select
           className="bg-black border border-gray-600 text-white rounded-lg px-4 py-2"
           value={selectedTransmission}
@@ -127,7 +125,6 @@ export default function CarList() {
           <option value="Manual">Manual</option>
         </select>
 
-        {/* Fuel */}
         <select
           className="bg-black border border-gray-600 text-white rounded-lg px-4 py-2"
           value={selectedFuel}
@@ -140,21 +137,19 @@ export default function CarList() {
           <option value="Electric">Electric</option>
         </select>
 
-        {/* Sort */}
         <select
           className="bg-black border border-gray-600 text-white rounded-lg px-4 py-2"
           value={sortBy}
           onChange={(e) => setSortBy(e.target.value)}
         >
           <option value="">SORT BY</option>
-          <option value="priceLowHigh">Price: Low → High</option>
-          <option value="priceHighLow">Price: High → Low</option>
-          <option value="yearNewOld">Year: New → Old</option>
-          <option value="yearOldNew">Year: Old → New</option>
+          <option value="priceLowHigh">Prijs: Laag → Hoog</option>
+          <option value="priceHighLow">Prijs: Hoog → Laag</option>
+          <option value="yearNewOld">Jaar: Nieuw → Oud</option>
+          <option value="yearOldNew">Jaar: Oud → Nieuw</option>
         </select>
       </div>
 
-      {/* Cars */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {filteredCars.length > 0 ? (
           filteredCars.map((car) => (
@@ -197,7 +192,7 @@ export default function CarList() {
           ))
         ) : (
           <p className="text-white text-center col-span-3">
-             No cars found matching your Search.
+             Geen auto’s gevonden die overeenkomen met uw zoekopdracht.
           </p>
         )}
       </div>

@@ -97,28 +97,16 @@ export default function CarTabs({ car }) {
     ],
   }
 
-  const description = `
-Drive with ease, comfort, and peace of mind with this Audi A6 Sedan. It's a 2023 model with 56,331 kilometers on the odometer. The bold, sporty S line exterior styling is particularly appealing. With its gasoline engine and automatic transmission, this is a great car for many more kilometers. Want to drive with a bit of vigor? No problem! The sports seats provide support and stability! The matrix LED lighting is the latest in automotive lighting. Always maximum light on the road, without obstructing oncoming traffic! The car is also equipped with: sports suspension, half-leather upholstery, heat-insulating glass, a black headliner, a split-folding rear seat, and LED taillights.
-
-Effortlessly customize your cockpit interface thanks to the digital dashboard in this car. Easily check the car's important functions via your smartphone and Connected Services, anytime, anywhere. You can operate the full-map navigation system and the audio system with DAB radio using buttons on the steering wheel. This way, you can always keep your attention on the road. The electronic climate control ensures a comfortable temperature in all conditions. Parking sensors are a useful tool for preventing parking damage. With paddle shifters on the steering wheel, a rain sensor, cruise control, automatically dimming exterior mirrors, central locking with remote control, and an onboard computer, this car is fully equipped.
-
-The automatic safety systems in this Audi act as an extra pair of eyes. And not only that, but they can also actively intervene to protect you and your passengers. Unintentionally drifting out of lane? No worries, the lane-keeping system warns and corrects. The forward collision warning system, or in plain English, "collision warning," activates if the sensor detects insufficient distance from a vehicle ahead or oncoming traffic.
-
-This car comes with a Bovag Warranty, so you can be assured that it has been thoroughly inspected. To truly experience this car, you absolutely must take a test drive. Email us now or call us, and we'll quickly schedule an appointment.
-
-Please note: Our advertisements are compiled with great care. However, it is possible that more or fewer options are available than stated.
-Our advice: Check carefully for all options when viewing or during a test drive.
-No rights can be derived from our advertisements or the specification charts on the car.
-`
+  const description = `Drive with ease, comfort, and peace of mind with this Audi A6 Sedan...`
 
   return (
     <div className="mt-12 bg-[#151515] text-white rounded-lg overflow-hidden">
-      <div className="flex border-b border-gray-800">
+      <div className="flex border-b border-gray-800 flex-wrap">
         {tabs.map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`px-6 py-3 capitalize ${
+            className={`px-4 sm:px-6 py-3 capitalize w-1/3 sm:w-auto text-center ${
               activeTab === tab
                 ? "bg-gray-800 text-white font-bold border-b-2 border-white"
                 : "hover:bg-gray-800 text-gray-300"
@@ -129,9 +117,9 @@ No rights can be derived from our advertisements or the specification charts on 
         ))}
       </div>
 
-      <div className="p-6 text-sm leading-relaxed">
+      <div className="p-4 sm:p-6 text-sm sm:text-base leading-relaxed">
         {activeTab === "features" && (
-          <div className="grid grid-cols-3 gap-x-16 gap-y-4 text-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {[
               ["Brand", "Audi"],
               ["Model", "A6"],
@@ -180,7 +168,7 @@ No rights can be derived from our advertisements or the specification charts on 
         )}
 
         {activeTab === "options" && (
-          <div className="space-y-6 grid grid-cols-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {Object.entries(options).map(([category, items]) => (
               <div key={category}>
                 <h3 className="text-green-500 font-semibold mb-2">{category}</h3>

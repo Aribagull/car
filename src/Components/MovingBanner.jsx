@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 
 export default function MovingBanner() {
   const texts = [
-    "Family business",
-    "Expert advice",
-    "Low mileage",
-    "Top condition occasions",
-    "Reliable",
+    "Familiebedrijf",
+    "Deskundig advies",
+    "Lage kilometerstanden",
+    "Topstaat occasions",
+    "Betrouwbaar",
   ];
 
   const controls = useAnimation();

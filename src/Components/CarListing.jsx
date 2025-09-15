@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import cars from "../Data/index.js";
 import CustomButton from "../CustomComponents/CustomButton.jsx";
 import { MdArrowOutward } from "react-icons/md";
+import { IoSearch } from "react-icons/io5";
 
 export default function CarListing() {
   const [make, setMake] = useState("");
@@ -35,12 +36,11 @@ export default function CarListing() {
       <div className="flex flex-col md:flex-row gap-12">
         <div className="md:w-[35%] mt-20">
           <span className="bg-[#171817] text-sm px-3 py-2 rounded-full">
-            Offer
+            Aanbod
           </span>
-          <h2 className="text-4xl font-bold mt-6 uppercase">New Arrivals</h2>
+          <h2 className="text-4xl font-bold mt-6 uppercase">nieuw binnen</h2>
           <p className="mt-4 text-gray-400 max-w-xs text-sm">
-            Here's a glimpse of our latest offerings. Use the filters below or
-            visit the offers page to browse our inventory.
+            Hiernaast een impressie van ons recente aanbod. Gebruik onderstaande filters of ga naar de aanbod pagina om in onze voorraad te zoeken.
           </p>
 
           <div className="mt-8 space-y-4">
@@ -50,10 +50,31 @@ export default function CarListing() {
               className="w-full bg-black border border-gray-700 px-4 py-3 rounded-md text-white focus:outline-none"
             >
               <option value="" className="bg-black text-gray-400">MERK</option>
-              <option value="VW" className="bg-black text-white">Volkswagen</option>
               <option value="Audi" className="bg-black text-white">Audi</option>
               <option value="BMW" className="bg-black text-white">BMW</option>
-              <option value="Mercedes" className="bg-black text-white">Mercedes</option>
+              <option value="Citroen" className="bg-black text-white">Citroen</option>
+              <option value="Cupra" className="bg-black text-white">Cupra</option>
+              <option value="Fiat" className="bg-black text-white">Fiat</option>
+              <option value="Ford" className="bg-black text-white">Ford</option>
+              <option value="Hyundai" className="bg-black text-white">Hyundai</option>
+              <option value="Jeep" className="bg-black text-white">Jeep</option>
+              <option value="Kia" className="bg-black text-white">Kia</option>
+              <option value="Land Rover" className="bg-black text-white">Land Rover</option>
+              <option value="Lynk & Co" className="bg-black text-white">Lynk & Co</option>
+              <option value="Mazda" className="bg-black text-white">Mazda</option>
+              <option value="MINI" className="bg-black text-white">MINI</option>
+              <option value="Mercedes-Benz" className="bg-black text-white">Mercedes-Benz</option>
+              <option value="Nissan" className="bg-black text-white">Nissan</option>
+              <option value="Opel" className="bg-black text-white">Opel</option>
+              <option value="Peugeot" className="bg-black text-white">Peugeot</option>
+              <option value="Porsche" className="bg-black text-white">Porsche</option>
+              <option value="Renault" className="bg-black text-white">Renault</option>
+              <option value="SEAT" className="bg-black text-white">SEAT</option>
+              <option value="Škoda" className="bg-black text-white">Škoda</option>
+              <option value="Suzuki" className="bg-black text-white">Suzuki</option>
+              <option value="Toyota" className="bg-black text-white">Toyota</option>
+              <option value="Volkswagen" className="bg-black text-white">Volkswagen</option>
+              <option value="Volvo" className="bg-black text-white">Volvo</option>
             </select>
 
 
@@ -72,12 +93,12 @@ export default function CarListing() {
 
             <div className="flex justify-between items-center gap-4 text-xs">
               <Link to="/allcars">
-                <CustomButton>SEARCH</CustomButton>
+                <CustomButton className="flex items-center gap-2"><IoSearch size={18} />Zoeken</CustomButton>
               </Link>
 
               <Link to="/allcars">
                 <CustomButton className="flex items-center gap-2 border-none group">
-                  VIEW ALL CARS
+                  Bekijk alle auto’s
                   <motion.span
                     whileTap={{ x: 6 }}
                     transition={{ type: "spring", stiffness: 300 }}
