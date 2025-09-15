@@ -62,7 +62,8 @@ const cars = [
   fuel: "Benzine",
   price: "—",
   monthly: "—",
-  transmission: "Automaat"
+  transmission: "Automaat",
+  model: "Golf"
 },
   {
   id: 6,

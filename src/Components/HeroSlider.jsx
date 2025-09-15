@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom"
-import slide1 from "../Assets/Images/Heroslider-1.png"
+import slide1 from "../Assets/Images/Heroslider-1.png"   
+import slideMobile from "../Assets/Images/MobileHeroslider-1.png" 
 import Header from "./Header"
 import CustomButton from "../CustomComponents/CustomButton"
 
@@ -14,18 +15,22 @@ export default function HeroSlider() {
     <section className="relative w-full h-screen overflow-hidden">
       <div className="absolute inset-0">
         <img
+          src={slideMobile}
+          alt="slide mobile"
+          className="absolute inset-0 w-full h-full object-contain mt-12 sm:hidden"
+        />
+
+        <img
           src={slide1}
-          alt="slide"
-          className="absolute inset-0 w-full h-full object-cover"
+          alt="slide desktop"
+          className="absolute inset-0 w-full h-full object-cover mt-12 hidden sm:block"
         />
       </div>
 
-  
       <div className="absolute inset-0 bg-black/10"></div>
       <div className="absolute top-0 left-0 w-full z-20">
         <Header />
       </div>
-
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center mt-6 sm:mt-10 text-white px-4">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold max-w-md sm:max-w-xl md:max-w-2xl uppercase leading-snug">

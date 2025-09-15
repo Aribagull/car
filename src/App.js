@@ -6,9 +6,9 @@ import Footer from "./Page/Footer";
 import CarDetail from "./Components/CarDetail";
 import ScrollToTop from "./CustomComponents/ScrollToTop";
 import About from "./Page/About";
-import ServiceDetail from "./Page/ServiceDetail";
 import Services from "./Components/ServicesSection";
 import ContactSection from "./Components/Contact";
+import ServicesDetails from "./Components/ServicesDetails";
 
 
 function App() {
@@ -24,8 +24,8 @@ function App() {
             <Route path="/car/:id" element={<CarDetail />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/services/:id" element={<ServiceDetail />} />
             <Route path="/contactus" element={<ContactSection />} />
+             <Route path="/services/:id" element={<ServicesDetails/>} />
           </Routes>
         </main>
         <Footer />

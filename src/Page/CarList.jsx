@@ -121,8 +121,8 @@ export default function CarList() {
           onChange={(e) => setSelectedTransmission(e.target.value)}
         >
           <option value="">TRANSMISSION</option>
-          <option value="Automatic">Automatic</option>
-          <option value="Manual">Manual</option>
+          <option value="Automatic">Automaat</option>
+          <option value="Manual">Handgeschakeld</option>
         </select>
 
         <select
@@ -130,11 +130,11 @@ export default function CarList() {
           value={selectedFuel}
           onChange={(e) => setSelectedFuel(e.target.value)}
         >
-          <option value="">FUEL</option>
-          <option value="Petrol">Petrol</option>
+          <option value="">BRANDSTOF</option>
+          <option value="Petrol">Benzine</option>
           <option value="Diesel">Diesel</option>
-          <option value="Hybrid">Hybrid</option>
-          <option value="Electric">Electric</option>
+          <option value="Hybrid">Hybride</option>
+          <option value="Electric">Elektrisch</option>
         </select>
 
         <select

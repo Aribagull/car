@@ -94,9 +94,7 @@ export default function Header() {
             <div className="flex flex-col justify-center items-start gap-4 px-10 py-20 text-left w-[70%]">
               <h2 className="text-xl font-bold">SFAS AUTO BEDRIJF COMPANY</h2>
               <p className="text-gray-200">Patrimoniumstraat 8,2181 GG Hillegom</p>
-              <p className="text-gray-200">+3113 534 1659 (General)</p>
-              <p className="text-gray-200">+316 14 28 16 95 (Sales - Patrick)</p>
-              <p className="text-gray-200">+316 53 44 58 22 (Sales - Ad)</p>
+              <p className="text-gray-200">+31 6 84658725 (Fasih)</p>
               <p className="text-gray-200 normal-case">Info@sfas-autobedrijf.nl</p>
 
               <div className="flex gap-3 mt-4">

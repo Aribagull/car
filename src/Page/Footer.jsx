@@ -22,7 +22,7 @@ export default function Footer() {
             <div className="flex items-start gap-3">
               <FaPhoneAlt className="text-lg mt-1" />
               <p>
-                +31 6 84658725 <span className="text-gray-400">(General)</span> <br />
+                +31 6 84658725 <span className="text-gray-400">(Fasih)</span> <br />
               </p>
             </div>
 

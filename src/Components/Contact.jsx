@@ -64,18 +64,18 @@ Neem gerust contact met ons op via e-mail, telefoon of ons contactformulier.
       <div className="space-y-6 text-gray-800 text-sm">
         <div>
           <h3 className="font-semibold">Address</h3>
-          <p>Dorpsstraat 72, 5051 CL Goirle</p>
+          <p>Patrimoniumstraat 8, 2181 GG Hillegom</p>
         </div>
 
         <div>
           <h3 className="font-semibold">Telefoon</h3>
-          <p>+31 6 84658725 (General)</p>
+          <p>+31 6 84658725 (Fasih)</p>
         </div>
 
         <div>
           <h3 className="font-semibold">Opening stijden</h3>
-          <p>Mon to Fri: 08:00 - 18:00</p>
-          <p>Sat: 09:00 - 17:00 & Sun: Closed</p>
+           Ma t/m vr: 08:00 - 18:00 <br />
+                Za: 09:00 - 17:00 & Zo: Gesloten
         </div>
 
         <div className="flex gap-4">
