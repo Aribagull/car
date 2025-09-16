@@ -30,7 +30,7 @@ export default function MovingBanner() {
 
   return (
     <div
-      className="w-full overflow-hidden bg-[#3d7235] py-3 "
+      className="w-full overflow-hidden bg-[#242824] py-3 "
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >

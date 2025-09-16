@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import financingImg from "../Assets/Images/Heroslider-2.jpeg";
+import serviceimg2 from "../Assets/Images/Serviceimage2.jpg";
 import { MdArrowOutward } from "react-icons/md";
 
 export default function Services() {
@@ -20,7 +21,6 @@ export default function Services() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* Finance / Lease */}
         <div className="relative rounded-lg overflow-hidden group h-64 md:h-[550px]">
           <Link to="/services/finance">
             <img
@@ -41,11 +41,11 @@ export default function Services() {
           </div>
         </div>
 
-        {/* Insurance */}
+      
         <div className="relative rounded-lg overflow-hidden group h-64 md:h-[550px]">
           <Link to="/services/insurance">
             <img
-              src="https://images.unsplash.com/photo-1692027679771-b0022d375f05?q=80&w=872&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src={serviceimg2}
               alt="Insurance"
               className="w-full h-full object-cover transform duration-500 group-hover:scale-105"
             />
@@ -62,9 +62,9 @@ export default function Services() {
           </div>
         </div>
 
-        {/* Extra services */}
+  
         <div className="flex flex-col gap-6">
-          <div className="bg-[#3d7235] p-6 py-10 rounded-lg flex flex-col justify-between h-64 md:h-auto">
+          <div className="bg-[#242824] p-6 py-10 rounded-lg flex flex-col justify-between h-64 md:h-auto">
             <h3 className="text-2xl font-bold uppercase">Diensten</h3>
             <p className="my-4 text-lg text-gray-200">
               Ontdek onze uitgebreide diensten voor een naadloze auto-ervaring.
@@ -78,7 +78,7 @@ export default function Services() {
           </div>
 
           <div className="bg-[#242824] p-6 py-10 rounded-lg flex flex-col justify-between h-64 md:h-auto">
-            <h3 className="text-2xl font-bold">ASK?</h3>
+            <h3 className="text-2xl font-bold">Vragen?</h3>
             <p className="my-4 text-lg text-gray-200">
               Neem gerust contact met ons op voor meer informatie.
             </p>
